@@ -1,28 +1,12 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
   "commitish" : "0.3.1",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "300ebb65c455c715c0935711a0d6b7e96f4ff004d3823d03b5d6f70d9df2c347",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "2cb00dd6f6037f182025f13cf71ab89fbfdd391295ae89dfd8ebf589e88d7b22",
       "name" : "SpaceTime",
       "container" : "SpaceTime.xcframework",
-      "identifier" : "ios-arm64_i386_x86_64-simulator"
-    },
-    {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "d662f0c4071b7f9dea9503752d6b5e7bd7ef82eecbdb31cee9fe76800b348f5a",
-      "name" : "SpaceTime",
-      "container" : "SpaceTime.xcframework",
-      "identifier" : "ios-arm64_armv7"
+      "identifier" : "ios-arm64"
     }
   ]
 }

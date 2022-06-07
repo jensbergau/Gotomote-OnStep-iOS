@@ -2,9 +2,18 @@
   "commitish" : "0.4.0",
   "iOS" : [
     {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "81e7d1f42f462189fcc581346b7c42334a88ecec82e5f95fca106b09b6d16263",
       "name" : "MathUtil",
-      "hash" : "981f3ea24b9f3adac9dcebc92824c2e31e1489873d5ab48670dcc3a3b07de677",
-      "swiftToolchainVersion" : "5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)"
+      "container" : "MathUtil.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "9734b73a95687b98f4016889ac722bf1cf07509340118861c2f5d6af5cbb9498",
+      "name" : "MathUtil",
+      "container" : "MathUtil.xcframework",
+      "identifier" : "ios-arm64_armv7"
     }
   ]
 }

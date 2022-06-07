@@ -91,7 +91,7 @@ class GotoObjectViewControllerTwo: UIViewController {
         formatter.numberStyle = .decimal
         let decStr = slctdJSONObj[passedSlctdObjIndex]["DEC"].doubleValue //  decStr: +22 01
         
-        let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2)
+        let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2).replacingOccurrences(of: ",", with: ".")
         
         // get whole number for degree value
         // let decDD = floor(Double(decForm)!)
@@ -199,7 +199,7 @@ class GotoObjectViewControllerTwo: UIViewController {
         formatter.numberStyle = .decimal
         let decStr = slctdJSONObj[passedSlctdObjIndex]["DEC"].doubleValue
 
-        let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2)
+        let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2).replacingOccurrences(of: ",", with: ".")
         
         // get whole number for degree value
         // let decDD = floor(Double(decForm)!)
@@ -543,7 +543,7 @@ class GotoObjectViewControllerTwo: UIViewController {
             
             let decStr = slctdJSONObj[passedSlctdObjIndex]["DEC"].doubleValue
             
-            let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2)
+            let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2).replacingOccurrences(of: ",", with: ".")
             
             // get whole number for degree value
             // let decDD = floor(Double(decForm)!)

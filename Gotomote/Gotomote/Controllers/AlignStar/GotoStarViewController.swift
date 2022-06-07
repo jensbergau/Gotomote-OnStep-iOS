@@ -89,7 +89,7 @@ class GotoStarViewController: UIViewController {
         
         formatter.numberStyle = .decimal
         
-        let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2)
+        let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2).replacingOccurrences(of: ",", with: ".")
         
         // get whole number for degree value
         // let decDD = floor(Double(decForm)!)
@@ -200,7 +200,7 @@ class GotoStarViewController: UIViewController {
         
         formatter.numberStyle = .decimal
         
-        let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2)
+        let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2).replacingOccurrences(of: ",", with: ".")
         
         // get whole number for degree value
         // let decDD = floor(Double(decForm)!)
@@ -525,7 +525,7 @@ class GotoStarViewController: UIViewController {
             
             formatter.numberStyle = .decimal
             
-            let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2)
+            let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2).replacingOccurrences(of: ",", with: ".")
             
             // get whole number for degree value
             // let decDD = floor(Double(decForm)!)

@@ -1,0 +1,156 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 effective-4.1.50 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios10.3 -enable-objc-interop -enable-library-evolution -swift-version 4 -enforce-exclusivity=checked -Onone -module-name SpaceTime
+import CoreLocation
+import Foundation
+import MathUtil
+@_exported import SpaceTime
+import Swift
+import _Concurrency
+public struct EclipticUtil {
+  public enum Accuracy {
+    case low
+    case high
+    public static func == (a: SpaceTime.EclipticUtil.Accuracy, b: SpaceTime.EclipticUtil.Accuracy) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func obliquityOfEcliptic(julianDay: SpaceTime.JulianDay, accuracy: SpaceTime.EclipticUtil.Accuracy = .high) -> MathUtil.DegreeAngle
+  public static func meanObliquityOfEcliptic(julianDay: SpaceTime.JulianDay, accuracy: SpaceTime.EclipticUtil.Accuracy = .high) -> MathUtil.DegreeAngle
+  public static var currentMeanObliquityOfEcliptic: MathUtil.DegreeAngle {
+    get
+  }
+  public static func trueObliquityOfEcliptic(julianDay: SpaceTime.JulianDay, accuracy: SpaceTime.EclipticUtil.Accuracy = .high) -> MathUtil.DegreeAngle
+  public static func longitudeNutation(julianDay: SpaceTime.JulianDay, accuracy: SpaceTime.EclipticUtil.Accuracy = .high) -> MathUtil.DegreeAngle
+  public static func obliquityNutation(julianDay: SpaceTime.JulianDay, accuracy: SpaceTime.EclipticUtil.Accuracy = .high) -> MathUtil.DegreeAngle
+  public static func longitudeAndObliquityNutation(julianDay: SpaceTime.JulianDay, accuracy: SpaceTime.EclipticUtil.Accuracy = .high) -> (MathUtil.DegreeAngle, MathUtil.DegreeAngle)
+}
+public struct JulianDay : Swift.CustomStringConvertible, Swift.ExpressibleByFloatLiteral, Swift.Comparable {
+  public typealias FloatLiteralType = Swift.Double
+  public static let B1950: SpaceTime.JulianDay
+  public static let J2000: SpaceTime.JulianDay
+  public static var now: SpaceTime.JulianDay {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public let value: Swift.Double
+  public var deltaT: Swift.Double
+  public var modifiedJulianDay: Swift.Double {
+    get
+  }
+  public var julianCentury: Swift.Double {
+    get
+  }
+  public var julianEphemerisDay: Swift.Double {
+    get
+  }
+  public var julianEphemerisCentury: Swift.Double {
+    get
+  }
+  public var julianEphemerisMillennium: Swift.Double {
+    get
+  }
+  public init(_ value: SpaceTime.JulianDay.FloatLiteralType, deltaT: Swift.Double = 0)
+  public init(floatLiteral value: SpaceTime.JulianDay.FloatLiteralType)
+  public init(date: Foundation.Date, deltaT: Swift.Double = 0)
+  public var date: Foundation.Date {
+    get
+  }
+  public static func + (lhs: SpaceTime.JulianDay, rhs: Foundation.TimeInterval) -> SpaceTime.JulianDay
+  public static func - (lhs: SpaceTime.JulianDay, rhs: Foundation.TimeInterval) -> SpaceTime.JulianDay
+  public static func - (lhs: SpaceTime.JulianDay, rhs: SpaceTime.JulianDay) -> Foundation.TimeInterval
+  public static func ~= (lhs: SpaceTime.JulianDay, rhs: SpaceTime.JulianDay) -> Swift.Bool
+  public static func == (lhs: SpaceTime.JulianDay, rhs: SpaceTime.JulianDay) -> Swift.Bool
+  public static func < (lhs: SpaceTime.JulianDay, rhs: SpaceTime.JulianDay) -> Swift.Bool
+}
+extension Swift.Optional where Wrapped == SpaceTime.JulianDay {
+  public static func ~= (lhs: SpaceTime.JulianDay?, rhs: SpaceTime.JulianDay?) -> Swift.Bool
+}
+public struct SiderealTime : Swift.CustomStringConvertible {
+  public let hourAngle: MathUtil.HourAngle
+  public var offsetFromGreenwichMeanSiderealTime: SpaceTime.SiderealTimeOffset {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public init(hourAngle: MathUtil.HourAngle)
+  public init(observerLocationTime locTime: SpaceTime.ObserverLocationTime)
+  public init(julianDay: SpaceTime.JulianDay)
+}
+public struct SiderealTimeOffset : Swift.CustomStringConvertible {
+  public let hourAngle: MathUtil.HourAngle
+  public var description: Swift.String {
+    get
+  }
+  public init(hourAngle: MathUtil.HourAngle)
+}
+public struct EclipticCoordinate {
+  public let longitude: MathUtil.DegreeAngle
+  public let latitude: MathUtil.DegreeAngle
+  public let distance: Swift.Double
+  public let julianDay: SpaceTime.JulianDay
+  public init(longitude: MathUtil.DegreeAngle, latitude: MathUtil.DegreeAngle, distance: Swift.Double, julianDay: SpaceTime.JulianDay)
+  public init(equatorialCoordinate coord: SpaceTime.EquatorialCoordinate, julianDay: SpaceTime.JulianDay)
+}
+extension SpaceTime.EquatorialCoordinate {
+  public init(EclipticCoordinate coord: SpaceTime.EclipticCoordinate, julianDay: SpaceTime.JulianDay)
+}
+public struct EquatorialCoordinate : Swift.ExpressibleByDictionaryLiteral {
+  public typealias Key = Swift.String
+  public typealias Value = Swift.Double
+  public let distance: Swift.Double
+  public let rightAscension: MathUtil.HourAngle
+  public let declination: MathUtil.DegreeAngle
+  public init(cartesian vec: MathUtil.Vector3)
+  public init(rightAscension: MathUtil.HourAngle, declination: MathUtil.DegreeAngle, distance: Swift.Double)
+  public init(dictionary: [Swift.String : Swift.Double])
+  public init(dictionaryLiteral elements: (Swift.String, Swift.Double)...)
+}
+extension MathUtil.Vector3 {
+  public init(equatorialCoordinate coord: SpaceTime.EquatorialCoordinate)
+}
+extension SpaceTime.EquatorialCoordinate {
+  public func precessed(from epoch1: Swift.Double, to epoch2: Swift.Double) -> SpaceTime.EquatorialCoordinate
+  public func angularSeparation(from coord: SpaceTime.EquatorialCoordinate) -> MathUtil.DegreeAngle
+}
+public struct HorizontalCoordinate : Swift.ExpressibleByDictionaryLiteral {
+  public let altitude: MathUtil.DegreeAngle
+  public let azimuth: MathUtil.DegreeAngle
+  public init(azimuth: MathUtil.DegreeAngle, altitude: MathUtil.DegreeAngle)
+  public init(cartesian vec: MathUtil.Vector3, observerInfo info: SpaceTime.ObserverLocationTime)
+  public init(equatorialCoordinate eqCoord: SpaceTime.EquatorialCoordinate, observerInfo info: SpaceTime.ObserverLocationTime)
+  public init(dictionary: [Swift.String : Swift.Double])
+  public init(dictionaryLiteral elements: (Swift.String, Swift.Double)...)
+  public typealias Key = Swift.String
+  public typealias Value = Swift.Double
+}
+extension SpaceTime.EquatorialCoordinate {
+  public init(horizontalCoordinate coord: SpaceTime.HorizontalCoordinate, observerInfo info: SpaceTime.ObserverLocationTime)
+}
+public struct ObserverLocationTime {
+  public let location: CoreLocation.CLLocation
+  public var timestamp: SpaceTime.JulianDay
+  public init()
+  public init(location: CoreLocation.CLLocation, timestamp: SpaceTime.JulianDay?)
+  public var localViewTransform: MathUtil.Matrix4 {
+    get
+  }
+}
+extension CoreLocation.CLLocation {
+  public var ecefCoordinate: MathUtil.Vector3 {
+    get
+  }
+  public var ecefToLocalNedTransform: MathUtil.Matrix4 {
+    get
+  }
+  public var ecefToLocalEnuTransform: MathUtil.Matrix4 {
+    get
+  }
+}
+extension SpaceTime.EclipticUtil.Accuracy : Swift.Equatable {}
+extension SpaceTime.EclipticUtil.Accuracy : Swift.Hashable {}

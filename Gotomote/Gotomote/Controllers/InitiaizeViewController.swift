@@ -178,14 +178,14 @@ class InitializeViewController: UIViewController {
     // At Home/Reset
     @IBAction func atHomeAct(_ sender: UIButton) {
         // :hC#
-        triggerConnection(cmd: ":hC#", setTag: 1)
+        triggerConnection(cmd: ":hF#", setTag: 1)
         //         Returns: Nothing
     }
     
     // Return Home
     @IBAction func returnHomeAct(_ sender: UIButton) {
         // :hF#
-        triggerConnection(cmd: ":hF#", setTag: 1)
+        triggerConnection(cmd: ":hC#", setTag: 1)
         //         Returns: Nothing
     }
     

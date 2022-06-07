@@ -106,7 +106,7 @@ class SelectStarTableViewController: UITableViewController, UISearchControllerDe
             formatter.numberStyle = .decimal
             let decStr = jsonObj[Int(key)!]["DEC"].doubleValue //  decStr: +22 01
             
-            let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2)
+            let decForm = decStr.formatNumber(minimumIntegerDigits: 2, minimumFractionDigits: 2).replacingOccurrences(of: ",", with: ".")
             
             // get whole number for degree value
             // let decDD = floor(Double(decForm)!)
