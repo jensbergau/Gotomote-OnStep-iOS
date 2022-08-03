@@ -19,6 +19,8 @@
 		3DEF66F7265FA11A0081CBA0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3DEF66F6265FA11A0081CBA0 /* FirebaseCrashlytics */; };
 		3DEF66F9265FA1910081CBA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DEF66F8265FA1910081CBA0 /* GoogleService-Info.plist */; };
 		3DEF66FB265FAD030081CBA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEF66FA265FAD030081CBA0 /* LaunchScreen.storyboard */; };
+		982E2AEB284FF16900A00BBB /* RadioButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982E2AEA284FF16900A00BBB /* RadioButtonController.swift */; };
+		982E2AEE284FF5DD00A00BBB /* SimpleCheckbox in Frameworks */ = {isa = PBXBuildFile; productRef = 982E2AED284FF5DD00A00BBB /* SimpleCheckbox */; };
 		D7028C03214BD9F6007D6B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7028C02214BD9F6007D6B7C /* Assets.xcassets */; };
 		D748C10F21C3AC2300456511 /* Bright Stars.json in Resources */ = {isa = PBXBuildFile; fileRef = D748C10E21C3AC2300456511 /* Bright Stars.json */; };
 		D756FE02219EDF30001F6DED /* EnterCoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D756FE01219EDF30001F6DED /* EnterCoordinatesViewController.swift */; };
@@ -89,6 +91,7 @@
 		3DC647DF265F9C50009A16DA /* MathUtil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MathUtil.framework; path = "Carthage/Build/MathUtil.xcframework/ios-arm64_armv7/MathUtil.framework"; sourceTree = "<group>"; };
 		3DEF66F8265FA1910081CBA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3DEF66FA265FAD030081CBA0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		982E2AEA284FF16900A00BBB /* RadioButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonController.swift; sourceTree = "<group>"; };
 		D7028C02214BD9F6007D6B7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D748C10E21C3AC2300456511 /* Bright Stars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Bright Stars.json"; sourceTree = "<group>"; };
 		D756FE01219EDF30001F6DED /* EnterCoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCoordinatesViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DEF66F5265FA11A0081CBA0 /* FirebaseAnalytics in Frameworks */,
+				982E2AEE284FF5DD00A00BBB /* SimpleCheckbox in Frameworks */,
 				3DC647E0265F9C50009A16DA /* MathUtil.framework in Frameworks */,
 				3DC647DA265F9A51009A16DA /* SpaceTime.framework in Frameworks */,
 				3D3B841A265F8FF400549D96 /* MarqueeLabel in Frameworks */,
@@ -239,6 +243,7 @@
 				D7E5268D214BD41E00376F5E /* Info.plist */,
 				3DEF66FA265FAD030081CBA0 /* LaunchScreen.storyboard */,
 				3DEF66F8265FA1910081CBA0 /* GoogleService-Info.plist */,
+				982E2AEA284FF16900A00BBB /* RadioButtonController.swift */,
 			);
 			path = Gotomote;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				3D3B8438265F989100549D96 /* NotificationBannerSwift */,
 				3DEF66F4265FA11A0081CBA0 /* FirebaseAnalytics */,
 				3DEF66F6265FA11A0081CBA0 /* FirebaseCrashlytics */,
+				982E2AED284FF5DD00A00BBB /* SimpleCheckbox */,
 			);
 			productName = "OnStep Controller";
 			productReference = D7E5267E214BD41D00376F5E /* Gotomote.app */;
@@ -388,6 +394,8 @@
 				3D3B841B265F90EE00549D96 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3D3B8437265F989100549D96 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
 				3DEF66F3265FA11A0081CBA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				989D80BD284FB18100F5BA7F /* XCRemoteSwiftPackageReference "StepSlider" */,
+				982E2AEC284FF5DD00A00BBB /* XCRemoteSwiftPackageReference "SimpleCheckbox" */,
 			);
 			productRefGroup = D7E5267F214BD41D00376F5E /* Products */;
 			projectDirPath = "";
@@ -453,6 +461,7 @@
 				D7E526AE214BD4D100376F5E /* GotoMRViewController.swift in Sources */,
 				D7E526B4214BD4D100376F5E /* BacklashViewController.swift in Sources */,
 				D7E526C4214BD50200376F5E /* DataSocket.swift in Sources */,
+				982E2AEB284FF16900A00BBB /* RadioButtonController.swift in Sources */,
 				D7E526D8214BD57F00376F5E /* SiderealTime.swift in Sources */,
 				D7648A3B21B0621000C087EE /* ReadMeViewController.swift in Sources */,
 				D7E526A0214BD49600376F5E /* TTSegmentedControl.swift in Sources */,
@@ -534,7 +543,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: jens.bergau@mailbox.org (C82Y4YHJFV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -599,7 +608,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: jens.bergau@mailbox.org (C82Y4YHJFV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -616,6 +625,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CFLAGS[arch=*]" = "-fembed-bitcode";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -637,7 +647,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XMXW4PFS72;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -654,7 +664,7 @@
 				MARKETING_VERSION = 4.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bergau.gotomote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jensbergau.gotomote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -675,7 +685,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XMXW4PFS72;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -692,7 +702,7 @@
 				MARKETING_VERSION = 4.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bergau.gotomote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jensbergau.gotomote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -765,6 +775,22 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		982E2AEC284FF5DD00A00BBB /* XCRemoteSwiftPackageReference "SimpleCheckbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BeauNouvelle/SimpleCheckbox.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		989D80BD284FB18100F5BA7F /* XCRemoteSwiftPackageReference "StepSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spromicky/StepSlider";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -797,6 +823,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DEF66F3265FA11A0081CBA0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		982E2AED284FF5DD00A00BBB /* SimpleCheckbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 982E2AEC284FF5DD00A00BBB /* XCRemoteSwiftPackageReference "SimpleCheckbox" */;
+			productName = SimpleCheckbox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

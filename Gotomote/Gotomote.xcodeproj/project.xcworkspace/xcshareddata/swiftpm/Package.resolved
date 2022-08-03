@@ -127,12 +127,30 @@
       }
     },
     {
+      "identity" : "simplecheckbox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BeauNouvelle/SimpleCheckbox.git",
+      "state" : {
+        "revision" : "96cf25c98bd8e595018df6a2466a9a1eb348fdb8",
+        "version" : "2.3.0"
+      }
+    },
+    {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SnapKit/SnapKit",
       "state" : {
         "revision" : "f222cbdf325885926566172f6f5f06af95473158",
         "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "stepslider",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/spromicky/StepSlider",
+      "state" : {
+        "revision" : "bb490b81515cb0dc87465938a36c43dcba11a274",
+        "version" : "1.8.0"
       }
     },
     {

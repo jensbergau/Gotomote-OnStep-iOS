@@ -16,6 +16,8 @@ import MathUtil
 import CocoaAsyncSocket
 import NotificationBannerSwift
 
+import SimpleCheckbox
+
 class GotoCustomObjectViewController: UIViewController {
     
     var passedCoordinates: [String] = [String]() // Get Latitude (for current site) // Get Longitude (for current site) // Get UTC Offset(for current site)
@@ -64,6 +66,9 @@ class GotoCustomObjectViewController: UIViewController {
     
     let formatter = NumberFormatter()
     
+    let radioController: RadioButtonController = RadioButtonController()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,7 +104,25 @@ class GotoCustomObjectViewController: UIViewController {
         
         let displayLink = CADisplayLink(target: self, selector: #selector(screenUpdate))
         displayLink.add(to: .main, forMode: RunLoop.Mode.default)
+        
+        
+        addCheckboxSubviews()
     }
+    
+    func addCheckboxSubviews() {
+            // circle
+            let circleBox = Checkbox(frame: CGRect(x: 30, y: 40, width: 25, height: 25))
+            circleBox.borderStyle = .circle
+            circleBox.checkmarkStyle = .circle
+            circleBox.borderLineWidth = 1
+            circleBox.uncheckedBorderColor = .lightGray
+            circleBox.checkedBorderColor = .blue
+            circleBox.checkmarkSize = 0.8
+            circleBox.checkmarkColor = .blue
+            circleBox.addTarget(self, action: #selector(circleBoxValueChanged(sender:)), for: .valueChanged)
+            view.addSubview(circleBox)
+    }
+    
     
     @objc func screenUpdate() {
 
@@ -137,6 +160,11 @@ class GotoCustomObjectViewController: UIViewController {
         // this -> :Sr21:30:00#:Sd+12:10:00#:MS#
         //:Sr123000#:Sd+234500#:MS#
 
+    }
+    
+    // target action example
+    @objc func circleBoxValueChanged(sender: Checkbox) {
+        print("circleBox value change: \(sender.isChecked)")
     }
     
     // Mark: Slider - Increase Speed
@@ -559,5 +587,29 @@ extension GotoCustomObjectViewController: GCDAsyncSocketDelegate {
             let banner = FloatingNotificationBanner(title: "\(err!.localizedDescription)", style: .danger)
             banner.show()
         }
+    }
+}
+
+
+
+extension UIButton {
+    //MARK:- Animate check mark
+    func checkboxAnimation(closure: @escaping () -> Void){
+        guard let image = self.imageView else {return}
+        self.adjustsImageWhenHighlighted = false
+        self.isHighlighted = false
+        
+        UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveLinear, animations: {
+            image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            
+        }) { (success) in
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear, animations: {
+                self.isSelected = !self.isSelected
+                //to-do
+                closure()
+                image.transform = .identity
+            }, completion: nil)
+        }
+        
     }
 }
